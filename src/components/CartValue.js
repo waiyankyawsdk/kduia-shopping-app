@@ -2,14 +2,10 @@ import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const CartValue = () => {
-    const {expenses, location} = useContext(AppContext);
-    const totalExpenses = expenses.reduce((total, item) => {
-        return (total += item.cost);
-    }, 0);
+    const {Location, CartValue} = useContext(AppContext);
     return (
         <div className="alert alert-primary">
-            <span>CartValue: {location}</span>
-            <span className="badge badge-secondary">Total Expenses: ${totalExpenses}</span>
+            <span>CartValue: {Location}{CartValue}</span>
         </div>
     );
 };
